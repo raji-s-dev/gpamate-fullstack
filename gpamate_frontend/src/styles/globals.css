@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes soft-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 0.6s ease-in-out 2;
+}
+
+.nav-link {
+  @apply text-black text-lg font-[Poppins] px-4 py-2 rounded-full
+         transition-all duration-300
+         hover:bg-blue-500 hover:text-white;
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+
+
+@layer utilities {
+  @keyframes bounceOnce {
+    0% { transform: scale(1); }
+    40% { transform: scale(0.9); }
+    70% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .animate-bounceOnce {
+    animation: bounceOnce 0.25s ease-out;
+  }
+}
+
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.4s ease;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.4s ease;
+}
+
+
+
+.perspective {
+  perspective: 1200px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

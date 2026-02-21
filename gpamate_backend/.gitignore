@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and outputs
+*.log
+inference_results/
+output/
+ocr_output.json
+
+# System files
+.DS_Store
+Thumbs.db
